@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+:root {
+  --color-pulp-cream: #F1EAD9;
+  --color-kraft-brown: #8A5A2E;
+  --color-ink: #241F1A;
+  --color-mill-green: #41533F;
+  --color-corrugate-rust: #A64A23;
+  --color-fiber-grey: #CBC1AE;
+  --color-paper-white: #FBF8F2;
+}
+
+@theme inline {
+  --color-pulp: var(--color-pulp-cream);
+  --color-kraft: var(--color-kraft-brown);
+  --color-ink: var(--color-ink);
+  --color-mill: var(--color-mill-green);
+  --color-rust: var(--color-corrugate-rust);
+  --color-fiber: var(--color-fiber-grey);
+  --color-paper: var(--color-paper-white);
+  --font-display: var(--font-fraunces);
+  --font-body: var(--font-plex-sans);
+  --font-mono: var(--font-plex-mono);
+}
+
+* { scrollbar-width: thin; scrollbar-color: var(--color-fiber-grey) transparent; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--color-pulp-cream);
+  color: var(--color-ink);
+  font-family: var(--font-plex-sans), system-ui, sans-serif;
+}
+
+::selection { background: var(--color-kraft-brown); color: var(--color-paper-white); }
+
+:focus-visible {
+  outline: 2px solid var(--color-corrugate-rust);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
